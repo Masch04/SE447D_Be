@@ -9,8 +9,7 @@ class BaiVietController extends Controller
 {
     public function getData()
     {
-        $data   =   BaiViet::all();
-
+        $data = BaiViet::all();
         return response()->json([
             'bai_viet'  =>  $data
         ]);
@@ -20,7 +19,6 @@ class BaiVietController extends Controller
     {
         $data   =   $request->all();
         BaiViet::create($data);
-
         return response()->json([
             'status'    =>  true,
             'message'   =>  'Đã tạo mới bài viết thành công!'
@@ -40,7 +38,6 @@ class BaiVietController extends Controller
     public function update(Request $request)
     {
         $data   = $request->all();
-
         BaiViet::find($request->id)->update($data);
 
         return response()->json([
