@@ -62,7 +62,7 @@ class HoaDonController extends Controller
                 'data'  =>  $data
             ]);
         }
-        
+
     }
 
     public function datPhong(Request $request)
@@ -114,7 +114,7 @@ class HoaDonController extends Controller
         $data['ho_va_ten']      =  $khach_hang->ho_lot . " " . $khach_hang->ten;
         $data['den_ngay']       =  $ngay_di->format('d/m/Y');
         $data['tong_tien']      =  number_format($hoaDon->tong_tien, 0, ",", ".");
-        $link_demo  = "https://img.vietqr.io/image/MB-1910061030119-compact.jpg?amount=" . $hoaDon->tong_tien . "&addInfo=TTDP" . $hoaDon->id;
+        $link_demo  = "https://img.vietqr.io/image/MB-1700116117118-compact.jpg?amount=" . $hoaDon->tong_tien . "&addInfo=TTDP" . $hoaDon->id;
         $data['ma_qr_code']     =  $link_demo;
 
         Mail::to($khach_hang->email)->send(new SendMail('Xác Nhân Đơn Đặt Phòng Tại Khách Sạn', 'xac_nhan_don_hang', $data));
